@@ -17,9 +17,13 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  font-family: Source Sans Pro, Sans-Serif; 
+  font-size: 36px;
 }
+/* check if I'm applying Source Sanc Pro and degrading to Sans-Serif correctly!!!!!!!!!!!!!!!!!! */
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ 

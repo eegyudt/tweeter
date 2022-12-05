@@ -1,0 +1,26 @@
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin: 0;
+  padding: 1.5em;
+  color: #FFFFFF;
+  background-color: #4056A1;
+  height: 120px;
+  font-family:Bungee, sans-serif;
+}
+
+.right-nav {
+  font-family: Source Sans Pro, Sans-Serif;
+  font-size: 0.75em
+}
+
+.fa-solid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 0.75em
+}
