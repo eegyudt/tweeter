@@ -3,7 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -17,13 +17,19 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-family: Source Sans Pro, Sans-Serif; 
-  font-size: 36px;
+  font-size: 24px;
 }
-/* check if I'm applying Source Sanc Pro and degrading to Sans-Serif correctly!!!!!!!!!!!!!!!!!! */
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ body {
+  color: #545149;
+  background-color: #f4f1ec;
+  background-image: foggy-birds;
+  font-family: Source Sans Pro, Sans-Serif; 
+  font-size: 36px;
+}
 
  

@@ -16,12 +16,20 @@
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
     rel="stylesheet">
   <!-- font awesome library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- do I need to copy this kit in my nav.cc as well? Did I apply it correctly here? -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- transparent textures library
+  <link
+  href="https://www.transparenttextures.com/patterns/foggy-birds.png"
+  rel="stylesheet">
+   -->
+
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -34,15 +42,26 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <!-- <div class="container"> -->
-      <div>tweeter</div>
-      <div class="right-nav">
-        <div class="new-tweet"><strong>Write </strong>a new tweet</div>
-        <div class="fa-solid fa-angles-down"></div>
-      </div>
-            
+    <span>tweeter</span>
+    <span class="right-nav">
+      <span class="new-tweet"><strong>Write </strong>a new tweet</span>
+      <span class="fa-solid fa-angles-down"></span>
+    </span>
+
 
     <!-- </div> -->
   </nav>
+
+  <header>
+    <div>
+      <img src="/images/profile-hex.png">
+    </div>
+    <!-- <br> -->
+    <div>
+      <h2>Your Name</h2>
+    </div>
+  </header>
+
   <!-- style="font-family:Bungee" -->
   <!-- Page-specific (main) content here -->
   <main class="container"></main>

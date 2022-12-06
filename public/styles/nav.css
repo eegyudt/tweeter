@@ -4,6 +4,11 @@ nav {
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* why do I need js here? how to get he navbar size correct? */
   margin: 0;
   padding: 1.5em;
   color: #FFFFFF;
@@ -11,6 +16,8 @@ nav {
   height: 120px;
   font-family:Bungee, sans-serif;
 }
+
+
 
 .right-nav {
   font-family: Source Sans Pro, Sans-Serif;
