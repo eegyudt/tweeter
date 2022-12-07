@@ -30,22 +30,22 @@ nav {
 .down-arrow {
   display: flex;
   justify-content: center;
-  color: red;
+  color: crimson;
   font-size: 0.5em ;
+  font-weight: 600;
   padding-top: 10px;
-
-}
+  }
 
 @keyframes bounce {
   0%   { transform: scale(1,1) translateY(0); }
-  10%  { transform: scale(1.1,.9) translateY(0); }
-  30%  { transform: scale(.9,1.1)   translateY(-10px);}
-  50%  { transform: scale(1.05,.95) translateY(0); }
+  25%  { transform: scale(1.1) translateY(0); }
+  50%  { transform: scale(1.1)   translateY(-10px);}
+  /* 50%  { transform: scale(1.05,.95) translateY(0); } */
   /* 58%  { transform: scale(1,1) translateY(-7px); }
   65%  { transform: scale(1,1) translateY(0);}
   100% { transform: scale(1,1) translateY(0);} */
 }
 
 .down-arrow {
-  animation: bounce 2s ease infinite;
+  animation: bounce 1s linear infinite;
 }
