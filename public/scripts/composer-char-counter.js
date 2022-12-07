@@ -15,7 +15,7 @@ $(document).ready(function() {
     let currentCount = $('.currentCounter');
     currentCount.html(maxLength);
 
-
+    // how do I do this in a css file?
     if (textRemaining < 0) {
       counter.css('color', '#8f0001');
       currentCount.css('color', '#8f0001');
