@@ -1,5 +1,5 @@
 
-header {
+.headerClass {
   display: flex;
   flex-direction: column;
   justify-content: start;

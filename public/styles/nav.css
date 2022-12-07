@@ -16,17 +16,23 @@ nav {
   font-family:Bungee, sans-serif;
 }
 
-
+.right-nav > p {
+  margin: 0;
+}
 
 .right-nav {
   font-family: Source Sans Pro, Sans-Serif;
   font-size: 0.75em
 }
 
-.fa-solid {
+.down-arrow {
   display: flex;
   justify-content: center;
   align-items: center;
   color: red;
   font-size: 0.75em
+}
+
+.new-tweet {
+  font-weight: bold;
 }

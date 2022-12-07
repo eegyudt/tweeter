@@ -17,11 +17,6 @@ html {
  * Global layout stuff
  */
 
-body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -30,7 +25,7 @@ body {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  background-image: foggy-birds;
+  /* background-image: foggy-birds; */
   font-family: Source Sans Pro, Sans-Serif;
   font-size: 36px;
 }

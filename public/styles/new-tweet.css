@@ -1,15 +1,6 @@
-
 form {
   display: flex;
   flex-direction: column;
-}
-
-.new-tweet {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%
-
 }
 
 .button-row {
