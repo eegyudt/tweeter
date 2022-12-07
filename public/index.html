@@ -33,10 +33,11 @@
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   
   <!-- External JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script defer type="text/javascript" src="/scripts/client.js"></script>
+  <script defer type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
@@ -70,7 +71,11 @@
           <textarea name="text" placeholder="What are you humming about?"  id="tweet-text"></textarea>
           <span class="button-row">
             <button type="submit">TWEET</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <span counter>
+              <output name="maxCounter" class="maxCounter" for="tweet-text">140</output>
+              <output name="/"> / </output>
+              <output name="currentCounter" class="currentCounter" for="tweet-text">140</output>
+            </span>
           </span>
       </form>
     </section>
