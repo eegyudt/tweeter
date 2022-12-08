@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 
   const createTweet = function(tweet) {
-    // console.log(tweet);
+    tweet.content.text = $("<div>").text(tweet.content.text).html();
     const $tweet = $(`
   
       <article class="tweet">
@@ -27,8 +27,7 @@ $(document).ready(function() {
             </div>
             <div class="handle" name="handle">${tweet.user.handle}</div>
           </header>
-          <p class="tweet-text" name="tweetText">${tweet.content.text}</content>
-          </p>
+          <div class="tweet-text" name="tweetText">${tweet.content.text}</div>
           <footer>
           <div>${timeago.format(tweet.created_at)}</div>
             <div class="image-class">
@@ -58,7 +57,9 @@ $(document).ready(function() {
 
   $('#form').submit(function(event) {
     event.preventDefault();
-    const text = $("<div>").text($("#tweet-text").val());
+    $('#error-print').slideUp(400).empty();
+    // $('#error-print').empty();
+    // const text = $("<div>").text($("#tweet-text").val());
     const text2 = $("#tweet-text").val();
     // get the data from the form (urlencoded data)
     const data = $(this).serialize();
@@ -66,27 +67,22 @@ $(document).ready(function() {
 
 
     //!!!!!!!!!!!!check how I can use the text constans instead!!!
-    // !!!!!!!!!!!check how I can make the textbox stop jumping during slide down
-
-
+    // !!!!!!!!!!!check how I can make the textbox stop from getting stuck during first slide down
+    // check alignment of navbar message
+    // should the page have a border around it?
 
     if (!text2) {
       $('#error-print').empty();
-      const $errorMessage = "<span class='error-message'> Please enter something before pressing the button! </span>";
-      $($('#error-print').append($errorMessage)).hide().slideToggle(1000);
+      const $errorMessage = "⚠ Please enter something before pressing the button! ⚠";
+      $('#error-print').text($errorMessage).slideDown();
+      $('#error-print').css('border-style', 'dotted');
       return;
-    } else {
-     
-      $($('#error-print').append("")).hide(1000);
-    }
- 
-    if (text2.length > 140) {
+    } else if (text2.length > 140) {
       $('#error-print').empty();
-      const $errorMessage = "<span class='error-message'> Your tweet is too long, you can only enter 140 characters! </span>";
-      $($('#error-print').append($errorMessage)).hide().slideToggle(1000);
+      const $errorMessage = "⚠ Your tweet is too long, you can only enter 140 characters! ⚠";
+      $('#error-print').text($errorMessage).slideDown();
+      $('#error-print').css('border-style', 'dotted');
       return;
-    } else {
-      $($('#error-print').append("")).hide(1000);
     }
 
 

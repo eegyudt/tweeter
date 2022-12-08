@@ -2,6 +2,7 @@ article {
   display: flex;
   flex-direction: column;
   border: 5px black solid;
+  border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 0px;
   font-family: Source Sans Pro, Sans-Serif;
@@ -40,11 +41,11 @@ footer {
   flex-direction: row;
   justify-content: space-evenly;
   font-family: Source Sans Pro, Sans-Serif;
-
 }
 
-.counter {
-  
+.tweet-text {
+padding-inline: 30px;
+font-size: 0.75em;
 }
 
 .client-name {
@@ -67,8 +68,3 @@ footer {
   color: gold;
 }
 
-.error-message {
-  color: red;
-  font-weight: 600 ;
-
-}

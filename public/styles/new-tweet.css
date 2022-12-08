@@ -3,6 +3,12 @@ form {
   flex-direction: column;
 }
 
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1em;
+}
 .button-row {
   display: flex;
   flex-direction: row;
@@ -16,6 +22,11 @@ button {
   color: white;
   background-color: #4056A1;
   border: none;
+}
+
+button:hover {
+  box-shadow: 5px 10px #888888;
+  text-shadow: 0.2px 0.2px rgb(79, 79, 136);
 }
 
 textarea {
@@ -39,4 +50,18 @@ textarea {
   padding-right: 5px;
   border-bottom: 5px, solid, black;
   word-wrap: break-word;
+}
+
+#error-print {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* font-family:Source Sans Pro , sans-serif; */
+  color: red;
+  /* font-weight: 600; */
+  /* padding: 10px; */
+  /* border: 3px; */
+  /* border-style: red; */
+
 }
