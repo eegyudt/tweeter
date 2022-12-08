@@ -24,9 +24,7 @@ footer {
   border-top: 5px black solid;
 }
 
-
-
-.tweet-container {
+.tweet-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

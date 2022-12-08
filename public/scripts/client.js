@@ -7,57 +7,61 @@
 /* global $ */
 /* global document */
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
 
-const renderTweets = function(tweets) {
-  // loops through tweets
-  let tweet;
-  for (let item of tweets) {
-    tweet = createTweetElement(item);
+$(() => {
 
-    let avatarPic = $tweet['user'].avatars;
-    avatarPic.html(avatar);
+  // console.log('hello');
 
-    let tweeterName = $tweet['user'].name;
-    tweeterName.html(client-nomen);
+  const $tweetSection = $('.tweet-container');
 
-    let tweetContent = $tweet['user'].content;
-    tweetContent.html(tweet-text);
 
-  }
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-};
+  const createTweet = (tweet) => {
+    console.log(tweet);
+    const $tweet = $(`
+  
+      <article class="tweet">
+          <header class="tweet-header">
+            <div class="name-avatar">
+              <img name=avatarPic src=${tweet.user.avatars}>
+              <div class="client-name" name="name">${tweet.user.name}</div>
+            </div>
+            <div class="handle" name="handle">${tweet.user.handle}</div>
+          </header>
+          <p>
+            <content class="tweet-text" name="tweetText">${tweet.content.text}</content>
+          </p>
+          <footer>
+            <div>${timeago.format(tweet.created_at)}</div>
+            <div class="image-class">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+  
+      `);
 
-const createTweetElement = function(tweet) {
-  let $tweet =; /* Your code for creating the tweet element */
-// ...
-return $tweet;
-};
+    return $tweet;
+  };
 
-renderTweets(data);
+  const renderTweets = (tweets) => {
+    for (const tweet of tweets) {
+      const $tweet = createTweet(tweet);
+      const $tweetSection = $('.tweet-container');
+      $tweetSection.append($tweet);
+    }
+  };
+
+
+  const fetchTweets = () => {
+    $.get('/tweets', (tweets) => {
+      // console.log(tweets);
+      renderTweets(tweets);
+    });
+  };
+
+  fetchTweets();
+
+ 
+});

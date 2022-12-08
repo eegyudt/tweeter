@@ -17,8 +17,8 @@ $(document).ready(function() {
 
     // how do I do this in a css file?
     if (textRemaining < 0) {
-      counter.css('color', '#8f0001');
-      currentCount.css('color', '#8f0001');
+      counter.css('color', '#8c000f');
+      currentCount.css('color', '#8c000f');
     } else {
       counter.css('color', '#000000');
       currentCount.css('color', '#000000');
