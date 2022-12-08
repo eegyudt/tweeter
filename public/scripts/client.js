@@ -27,8 +27,7 @@ $(document).ready(function() {
             </div>
             <div class="handle" name="handle">${tweet.user.handle}</div>
           </header>
-          <p>
-            <content class="tweet-text" name="tweetText">${tweet.content.text}</content>
+          <p class="tweet-text" name="tweetText">${tweet.content.text}</content>
           </p>
           <footer>
           <div>${timeago.format(tweet.created_at)}</div>
@@ -59,8 +58,22 @@ $(document).ready(function() {
 
   $('#form').submit(function(event) {
     event.preventDefault();
+    const text = $("#tweet-text").val();
     // get the data from the form (urlencoded data)
     const data = $(this).serialize();
+    // console.log(data);
+    if (!text) {
+      alert("Please enter something before pressing the button!");
+      return;
+    }
+
+
+    if (text.length > 140) {
+      alert("Your tweet is too long, you can only enter 140 characters!");
+      return;
+    }
+
+
     // make a post request to the server
     $("#form")[0].reset();
     $.ajax({
