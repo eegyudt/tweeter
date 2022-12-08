@@ -73,28 +73,22 @@ $(document).ready(function() {
     if (!text2) {
       $('#error-print').empty();
       const $errorMessage = "<span class='error-message'> Please enter something before pressing the button! </span>";
-      // $errorMessage.appendTo('#error-print').hide().slideDown("slow");
-
-      $($('#error-print').append($errorMessage)).hide().slideToggle('slow');
-      
-      // $($errorMessage).appendTo("#error-print").hide().slideDown();
+      $($('#error-print').append($errorMessage)).hide().slideToggle(1000);
       return;
     } else {
-      $($('#error-print').append("")).hide('slow');
+     
+      $($('#error-print').append("")).hide(1000);
     }
-
+ 
     if (text2.length > 140) {
       $('#error-print').empty();
-      // $($('#error-print').append("")).hide('slow');
       const $errorMessage = "<span class='error-message'> Your tweet is too long, you can only enter 140 characters! </span>";
-
-      $($('#error-print').append($errorMessage)).hide().slideToggle('slow');
-
-      // $($errorMessage).appendTo("#error-print").hide().slideDown();
+      $($('#error-print').append($errorMessage)).hide().slideToggle(1000);
       return;
     } else {
-      $($errorMessage).appendTo("").hide('slow');
+      $($('#error-print').append("")).hide(1000);
     }
+
 
     // make a post request to the server
     $("#form")[0].reset();
