@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 
   const createTweet = function(tweet) {
-    console.log(tweet);
+    // console.log(tweet);
     const $tweet = $(`
   
       <article class="tweet">
@@ -55,6 +55,8 @@ $(document).ready(function() {
   };
 
 
+
+
   $('#form').submit(function(event) {
     event.preventDefault();
     // get the data from the form (urlencoded data)
@@ -65,14 +67,14 @@ $(document).ready(function() {
       method: 'post',
       url: '/tweets',
       data
-    }).then(fetchTweets);
+    }).then(loadTweets);
 
     // $.post('/tweets', data, (response) => {
     //   console.log(response);
     // fetchTweets(); // GET
   });
 
-  const fetchTweets = function() {
+  const loadTweets = function() {
     $.ajax({
       method: 'get',
       url: '/tweets',
@@ -84,7 +86,7 @@ $(document).ready(function() {
   };
 
 
-  fetchTweets();
+  loadTweets();
 
 });
 
