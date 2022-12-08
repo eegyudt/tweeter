@@ -58,7 +58,7 @@ $(document).ready(function() {
 
   $('#form').submit(function(event) {
     event.preventDefault();
-    const text = $("#tweet-text").val();
+    const text = $("<div>").text($("#tweet-text").val());
     // get the data from the form (urlencoded data)
     const data = $(this).serialize();
     // console.log(data);
