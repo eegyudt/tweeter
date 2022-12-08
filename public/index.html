@@ -77,11 +77,12 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      <div id="error-print"></div>
       <form id="form" action="/tweets" method="POST">
           <textarea name="text" placeholder="What are you humming about?"  id="tweet-text"></textarea>
           <span class="button-row">
             <button type="submit">TWEET</button>
-            <span counter>
+            <span class: counter>
               <output name="maxCounter" class="maxCounter" for="tweet-text">140</output>
               <output name="/"> / </output>
               <output name="currentCounter" class="currentCounter" for="tweet-text">140</output>

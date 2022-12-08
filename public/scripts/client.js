@@ -59,20 +59,42 @@ $(document).ready(function() {
   $('#form').submit(function(event) {
     event.preventDefault();
     const text = $("<div>").text($("#tweet-text").val());
+    const text2 = $("#tweet-text").val();
     // get the data from the form (urlencoded data)
     const data = $(this).serialize();
     // console.log(data);
-    if (!text) {
-      alert("Please enter something before pressing the button!");
+
+
+    //!!!!!!!!!!!!check how I can use the text constans instead!!!
+    // !!!!!!!!!!!check how I can make the textbox stop jumping during slide down
+
+
+
+    if (!text2) {
+      $('#error-print').empty();
+      const $errorMessage = "<span class='error-message'> Please enter something before pressing the button! </span>";
+      // $errorMessage.appendTo('#error-print').hide().slideDown("slow");
+
+      $($('#error-print').append($errorMessage)).hide().slideToggle('slow');
+      
+      // $($errorMessage).appendTo("#error-print").hide().slideDown();
       return;
+    } else {
+      $($('#error-print').append("")).hide('slow');
     }
 
+    if (text2.length > 140) {
+      $('#error-print').empty();
+      // $($('#error-print').append("")).hide('slow');
+      const $errorMessage = "<span class='error-message'> Your tweet is too long, you can only enter 140 characters! </span>";
 
-    if (text.length > 140) {
-      alert("Your tweet is too long, you can only enter 140 characters!");
+      $($('#error-print').append($errorMessage)).hide().slideToggle('slow');
+
+      // $($errorMessage).appendTo("#error-print").hide().slideDown();
       return;
+    } else {
+      $($errorMessage).appendTo("").hide('slow');
     }
-
 
     // make a post request to the server
     $("#form")[0].reset();

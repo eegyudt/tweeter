@@ -43,6 +43,10 @@ footer {
 
 }
 
+.counter {
+  
+}
+
 .client-name {
   padding: 20px;
 }
@@ -61,4 +65,10 @@ footer {
 
 .fas:hover {
   color: gold;
+}
+
+.error-message {
+  color: red;
+  font-weight: 600 ;
+
 }
