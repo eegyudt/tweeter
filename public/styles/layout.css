@@ -40,9 +40,6 @@ main {
 
 .body-container .headerClass {
   flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  border-radius: 0px;
 }
 
 .body-container .container {
@@ -57,18 +54,10 @@ main {
   }
 
   .body-container .headerClass {
-    display: flex;
-    justify-content: center;
     flex-grow: 1;
     background: #4056A1;
     margin-top: 120;
-  }
-
-  .body-container .headerClass .h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 120;
+    border-radius: 0;
   }
 
   .body-container .container {
@@ -78,6 +67,7 @@ main {
   main {
     margin-top: 0;
   }
+
 }
 
 /* tablets and small screens 769-1024px */
@@ -85,23 +75,22 @@ main {
   .body-container {
     flex-direction: row;
     margin-top: unset;
+    padding: 0 20px;
+    gap: 20px;
   }
 
   .body-container .headerClass {
-    display: flex;
-    justify-content: center;
     flex-grow: 1;
-  }
-
-  .body-container .headerClass .h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 120;
+    width: 33%;
+    margin-left: 0;
   }
 
   .body-container .container {
     flex-grow: 1;
+    word-wrap: break-word;
+    width: 66%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -109,23 +98,29 @@ main {
 @media only screen and (min-width: 1025px) {
   .body-container {
     flex-direction: row;
+    margin: 0;
     margin-top: unset;
+    padding: 0 20px;
+    gap: 20px;
   }
 
   .body-container .headerClass {
-    display: flex;
-    justify-content: center;
     flex-grow: 1;
-  }
-
-  .headerClass .h2 {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 120;
+    width: 33%;
+    margin-left: 0;
   }
 
   .body-container .container {
     flex-grow: 1;
+    box-sizing: content-box;
+    word-wrap: break-word;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .container {
+    word-wrap: break-word;
+    width: 66%;
   }
 }

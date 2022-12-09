@@ -41,11 +41,17 @@ footer {
   flex-direction: row;
   justify-content: space-evenly;
   font-family: Source Sans Pro, Sans-Serif;
+  font-size: 20px;
+}
+
+.handle {
+  font-size: 20px;
 }
 
 .tweet-text {
-padding-inline: 30px;
-font-size: 0.75em;
+  padding-inline: 30px;
+  font-size: 0.75em;
+  word-wrap: break-word;
 }
 
 .client-name {
@@ -67,4 +73,3 @@ font-size: 0.75em;
 .fas:hover {
   color: gold;
 }
-

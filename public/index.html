@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
 
-    <!-- Bungee and Source Sans Pro fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Bungee and Source Sans Pro fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
@@ -42,47 +42,48 @@
   <script defer type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </head>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav class="navbar">
-     <span>tweeter</span>
-     <button class="right-nav">
-       <span><b>Compose</b> a tweet </span>
-       <div class=chevron>
-          <span class="fa-solid fa-angles-down"></span>
-        </div>
-      </button>
-    </nav>
-
-    <!-- Header with avatar and name  -->
-    <div class="body-container">
-      <header class="headerClass">
-        <div>
-          <img src="/images/profile-hex.png">
-        </div>
-        <div>
-          <h2>Birdy Birderson</h2>
-        </div>
-      </header>
-
-      <!-- main - tweet container -->
-      <main class="container">
-        <section class="new-tweet">
-          <div id="error-print"></div>
-          <form id="form" action="/tweets" method="POST">
-            <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
-            <span class="button-row">
-              <button type="submit">TWEET</button>
-              <span class: counter>
-                <output name="maxCounter" class="maxCounter" for="tweet-text">140</output>
-                <output name="/"> / </output>
-                <output name="currentCounter" class="currentCounter" for="tweet-text">140</output>
-              </span>
-            </span>
-              </form>
-            </section>
-           <section class="tweet-container"></section>
-      </main>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav class="navbar">
+    <span>tweeter</span>
+    <button class="right-nav">
+      <span><b>Compose</b> a tweet </span>
+      <div class=chevron>
+        <span class="fa-solid fa-angles-down"></span>
       </div>
-  </body>
+    </button>
+  </nav>
+
+  <!-- Header with avatar and name  -->
+  <div class="body-container">
+    <header class="headerClass">
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <div>
+        <h2>Birdy Birderson</h2>
+      </div>
+    </header>
+
+    <!-- main - tweet container -->
+    <main class="container">
+      <section class="new-tweet">
+        <div id="error-print"></div>
+        <form id="form" action="/tweets" method="POST">
+          <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
+          <span class="button-row">
+            <button type="submit">TWEET</button>
+            <span class: counter>
+              <output name="maxCounter" class="maxCounter" for="tweet-text">140</output>
+              <output name="/"> / </output>
+              <output name="currentCounter" class="currentCounter" for="tweet-text">140</output>
+            </span>
+          </span>
+        </form>
+      </section>
+      <section class="tweet-container"></section>
+    </main>
+  </div>
+</body>
+
 </html>

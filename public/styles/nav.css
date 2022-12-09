@@ -78,3 +78,10 @@ button.right-nav:hover {
 .chevron {
   animation: bounce 1s linear infinite;
 }
+
+
+@media only screen and (max-width: 768px) {
+  .navbar button {
+    border: none;
+  }
+}
