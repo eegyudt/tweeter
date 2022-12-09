@@ -37,12 +37,12 @@ nav {
 .navbar button {
   font-size: 0.75em;
   color: white;
-  background-color: #8a40a1;
+  background-color: #4056A1;
   cursor: pointer;
   height: 77px;
   width: 247px;
   border-radius: 20px;
-  border: solid pink;
+  border: solid #5675dc;
 }
 
 button.right-nav:hover {

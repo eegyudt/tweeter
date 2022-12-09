@@ -10,10 +10,15 @@
   background-color: teal;
   color: white;
   margin-left: 20px;
+  border: 5pc ;
+  border-color: #4056A1;
+  border-radius: 30px
 }
 
 h2 {
+  display: flex;
   margin: 0px;
+  justify-content: center;
 }
 
 /* cellphones and tablets: maximum width of 768px*/

@@ -40,6 +40,9 @@ main {
 
 .body-container .headerClass {
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  border-radius: 0px;
 }
 
 .body-container .container {
@@ -54,8 +57,17 @@ main {
   }
 
   .body-container .headerClass {
+    display: flex;
+    justify-content: center;
     flex-grow: 1;
     background: #4056A1;
+    margin-top: 120;
+  }
+
+  .body-container .headerClass .h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 120;
   }
 
@@ -76,7 +88,16 @@ main {
   }
 
   .body-container .headerClass {
+    display: flex;
+    justify-content: center;
     flex-grow: 1;
+  }
+
+  .body-container .headerClass .h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120;
   }
 
   .body-container .container {
@@ -92,7 +113,16 @@ main {
   }
 
   .body-container .headerClass {
+    display: flex;
+    justify-content: center;
     flex-grow: 1;
+  }
+
+  .headerClass .h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120;
   }
 
   .body-container .container {

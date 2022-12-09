@@ -55,12 +55,12 @@ $(document).ready(function() {
     // Check if tweet text is empty or longer than 140 characters
     if (!text) {
       $('#error-print').empty();
-      const $errorMessage = "⚠ Please enter something before pressing the button! ⚠";
+      const $errorMessage = "⚠ Please enter something before pressing the button!";
       $('#error-print').text($errorMessage).slideDown();
       return;
     } else if (text.length > 140) {
       $('#error-print').empty();
-      const $errorMessage = "⚠ Your tweet is too long, you can only enter 140 characters! ⚠";
+      const $errorMessage = "⚠ Your tweet is too long, you can only enter 140 characters!";
       $('#error-print').text($errorMessage).slideDown();
       return;
     }
