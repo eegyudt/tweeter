@@ -10,16 +10,11 @@
 
 $(document).ready(function() {
 
-  // console.log('hello');
-
-  // const $tweetSection = $('.tweet-container');
-
-
+  // Create tweet
   const createTweet = function(tweet) {
     tweet.content.text = $("<div>").text(tweet.content.text).html();
     const $tweet = $(`
-  
-      <article class="tweet">
+        <article class="tweet">
           <header class="tweet-header">
             <div class="name-avatar">
               <img name=avatarPic src=${tweet.user.avatars}>
@@ -37,85 +32,62 @@ $(document).ready(function() {
             </div>
           </footer>
         </article>
-  
       `);
-
     return $tweet;
   };
 
+  // Render tweets
   const renderTweets = function(tweets) {
     $('.tweet-container').empty();
     for (const tweet of tweets) {
       const $tweet = createTweet(tweet);
-      // const $tweetSection = $('.tweet-container');
       $('.tweet-container').prepend($tweet);
     }
   };
 
-
-
-
+  // Get tweet from the form
   $('#form').submit(function(event) {
     event.preventDefault();
     $('#error-print').slideUp(400).empty();
-    // $('#error-print').empty();
-    // const text = $("<div>").text($("#tweet-text").val());
-    const text2 = $("#tweet-text").val();
-    // get the data from the form (urlencoded data)
+    const text = $("#tweet-text").val();
     const data = $(this).serialize();
-    // console.log(data);
 
-
-    //!!!!!!!!!!!!check how I can use the text constans instead!!!
-    // !!!!!!!!!!!check how I can make the textbox stop from getting stuck during first slide down
-    // check alignment of navbar message
-    // should the page have a border around it?
-
-    if (!text2) {
+    // Check if tweet text is empty or longer than 140 characters
+    if (!text) {
       $('#error-print').empty();
       const $errorMessage = "⚠ Please enter something before pressing the button! ⚠";
       $('#error-print').text($errorMessage).slideDown();
-      $('#error-print').css('border-style', 'dotted');
       return;
-    } else if (text2.length > 140) {
+    } else if (text.length > 140) {
       $('#error-print').empty();
       const $errorMessage = "⚠ Your tweet is too long, you can only enter 140 characters! ⚠";
       $('#error-print').text($errorMessage).slideDown();
-      $('#error-print').css('border-style', 'dotted');
       return;
     }
 
-
-    // make a post request to the server
+    // Make a post request to the server
     $("#form")[0].reset();
     $.ajax({
       method: 'post',
       url: '/tweets',
       data
     }).then(loadTweets);
-
-    // $.post('/tweets', data, (response) => {
-    //   console.log(response);
-    // fetchTweets(); // GET
+    $('.maxCounter').text('140');
   });
 
+  // Render tweets on the website
   const loadTweets = function() {
     $.ajax({
       method: 'get',
       url: '/tweets',
     }).then(renderTweets);
-    // $.get('/tweets', function(tweets) {
-    //   // console.log(tweets);
-    //   renderTweets(tweets);
-    // });
   };
 
+  // Compose button on navigation bar
+  $('.right-nav').click(function(event) {
+    event.preventDefault();
+    $('#tweet-text').focus();
+  });
 
   loadTweets();
-
 });
-
-
-
-
-

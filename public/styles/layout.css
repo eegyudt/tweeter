@@ -13,19 +13,10 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
-  /* background-image: foggy-birds; */
+  background-image: foggy-birds;
   font-family: Source Sans Pro, Sans-Serif;
   font-size: 36px;
 }
@@ -38,4 +29,73 @@ main {
   display: block;
   margin-inline-start: 5%;
   margin-inline-end: 5%;
+  margin-top: 120px;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 150px;
+}
+
+.body-container .headerClass {
+  flex-grow: 1;
+}
+
+.body-container .container {
+  flex-grow: 2;
+}
+
+/* cellphones and portrait tablets: maximum width of 767px*/
+@media only screen and (max-width: 768px) {
+  .body-container {
+    flex-direction: column;
+    margin-top: unset;
+  }
+
+  .body-container .headerClass {
+    flex-grow: 1;
+    background: #4056A1;
+    margin-top: 120;
+  }
+
+  .body-container .container {
+    flex-grow: 1;
+  }
+
+  main {
+    margin-top: 0;
+  }
+}
+
+/* tablets and small screens 769-1024px */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .body-container {
+    flex-direction: row;
+    margin-top: unset;
+  }
+
+  .body-container .headerClass {
+    flex-grow: 1;
+  }
+
+  .body-container .container {
+    flex-grow: 1;
+  }
+}
+
+/* desktop screen larger than 1024px */
+@media only screen and (min-width: 1025px) {
+  .body-container {
+    flex-direction: row;
+    margin-top: unset;
+  }
+
+  .body-container .headerClass {
+    flex-grow: 1;
+  }
+
+  .body-container .container {
+    flex-grow: 1;
+  }
 }

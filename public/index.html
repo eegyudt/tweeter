@@ -5,12 +5,15 @@
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
+  <!-- Disable viewpoint zooming -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
 
-  <!-- Bungee and Source Sans Pro fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Bungee and Source Sans Pro fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
@@ -19,12 +22,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- transparent textures library
-  <link
-  href="https://www.transparenttextures.com/patterns/foggy-birds.png"
-  rel="stylesheet">
-   -->
-
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -43,55 +40,49 @@
   <!-- App JS -->
   <script defer type="text/javascript" src="/scripts/client.js"></script>
   <script defer type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  <!-- <script defer type="text/javascript" src="../server/data-files/initial-tweets.json"></script> -->
-  <!-- ^^^^???????????????? -->
 </head>
 
-<body>
-  <!-- Top nav bar (fixed) -->
-  <nav>
-    <!-- <div class="container"> -->
-    <span>tweeter</span>
-    <div class="right-nav">
-      <span class="new-tweet"><b>Write</b> a new tweet </span>
-      <div class=chevron>
-        <span class="fa-solid fa-angles-down"></span>
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav class="navbar">
+     <span>tweeter</span>
+     <button class="right-nav">
+       <span><b>Write</b> a new tweet </span>
+       <div class=chevron>
+          <span class="fa-solid fa-angles-down"></span>
+        </div>
+      </button>
+    </nav>
+
+    <!-- Header with avatar and name  -->
+    <div class="body-container">
+      <header class="headerClass">
+        <div>
+          <img src="/images/profile-hex.png">
+        </div>
+        <div>
+          <h2>Birdy Birderson</h2>
+        </div>
+      </header>
+
+      <!-- main - tweet container -->
+      <main class="container">
+        <section class="new-tweet">
+          <div id="error-print"></div>
+          <form id="form" action="/tweets" method="POST">
+            <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
+            <span class="button-row">
+              <button type="submit">TWEET</button>
+              <span class: counter>
+                <output name="maxCounter" class="maxCounter" for="tweet-text">140</output>
+                <output name="/"> / </output>
+                <output name="currentCounter" class="currentCounter" for="tweet-text">140</output>
+              </span>
+            </span>
+              </form>
+            </section>
+           <section class="tweet-container"></section>
+      </main>
       </div>
-    </div>
-
-
-    <!-- </div> -->
-  </nav>
-
-  <header class="headerClass">
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <div>
-      <h2>Birdy Birderson</h2>
-    </div>
-  </header>
-
-  <!-- style="font-family:Bungee" -->
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <div id="error-print"></div>
-      <form id="form" action="/tweets" method="POST">
-        <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
-        <span class="button-row">
-          <button type="submit">TWEET</button>
-          <span class: counter>
-            <output name="maxCounter" class="maxCounter" for="tweet-text">140</output>
-            <output name="/"> / </output>
-            <output name="currentCounter" class="currentCounter" for="tweet-text">140</output>
-          </span>
-        </span>
-      </form>
-    </section>
-    <section class="tweet-container">
-    </section>
-  </main>
-</body>
-
+  </body>
 </html>
